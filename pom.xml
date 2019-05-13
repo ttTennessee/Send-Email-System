@@ -22,5 +22,6 @@
         <module>send-email-web</module>
         <module>send-email-dao</module>
         <module>send-email-service</module>
+        <module>send-email-commons</module>
     </modules>
 </project>

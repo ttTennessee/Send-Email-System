@@ -14,7 +14,7 @@
 
         <!-- 配置 tk.mybatis 插件 -->
         <plugin type="tk.mybatis.mapper.generator.MapperPlugin">
-            <property name="mappers" value="xyz.jfshare.demos.send.email.web.basemapper.MyMapper"/>
+            <property name="mappers" value="xyz.jfshare.demos.send.email.commons.baseMapper.MyMapper"/>
         </plugin>
 
         <!-- 配置数据库连接 -->

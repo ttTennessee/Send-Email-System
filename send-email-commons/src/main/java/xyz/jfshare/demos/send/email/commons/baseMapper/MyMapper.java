@@ -1,4 +1,4 @@
-package xyz.jfshare.demos.send.email.web.basemapper;
+package xyz.jfshare.demos.send.email.commons.baseMapper;
 
 import tk.mybatis.mapper.common.Mapper;
 import tk.mybatis.mapper.common.MySqlMapper;

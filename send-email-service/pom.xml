@@ -11,6 +11,13 @@
     <modelVersion>4.0.0</modelVersion>
 
     <artifactId>send-email-service</artifactId>
+    <packaging>jar</packaging>
 
-
+    <dependencies>
+        <dependency>
+            <groupId>xyz.jfshare.demos</groupId>
+            <artifactId>send-email-dao</artifactId>
+            <version>1.0.0-SNAPSHOT</version>
+        </dependency>
+    </dependencies>
 </project>

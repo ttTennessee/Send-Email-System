@@ -3,6 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/Send-Email-System.iml" filepath="$PROJECT_DIR$/.idea/Send-Email-System.iml" />
+      <module fileurl="file://$PROJECT_DIR$/send-email-commons/send-email-commons.iml" filepath="$PROJECT_DIR$/send-email-commons/send-email-commons.iml" />
       <module fileurl="file://$PROJECT_DIR$/send-email-dao/send-email-dao.iml" filepath="$PROJECT_DIR$/send-email-dao/send-email-dao.iml" />
       <module fileurl="file://$PROJECT_DIR$/send-email-dependencies/send-email-dependencies.iml" filepath="$PROJECT_DIR$/send-email-dependencies/send-email-dependencies.iml" />
       <module fileurl="file://$PROJECT_DIR$/send-email-domain/send-email-domain.iml" filepath="$PROJECT_DIR$/send-email-domain/send-email-domain.iml" />
