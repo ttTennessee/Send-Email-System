@@ -10,6 +10,28 @@ spring:
       test-on-borrow: true
       # MySQL 8.x: com.mysql.cj.jdbc.Driver
       driver-class-name: com.mysql.jdbc.Driver
+  devtools:
+    restart:
+      enabled: true
+      additional-paths: src/main/java
+      exclude: WEB-INF/**
+    #默认编码设置
+  http:
+    encoding:
+      charset: UTF-8
+      force: true
+      enabled: true
+  #邮箱设置
+  mail:
+    #QQ smtp.qq.com
+    #sina smtp.sina.cn
+    #aliyun smtp.aliyun.com
+    #163 smtp.163.com
+    host: smtp.qq.com
+    username: 929760196@qq.com
+    password: vnoatiyetjllbfje
+    default-encoding: UTF-8
+    from: 929760196@qq.com
 mybatis:
   type-aliases-package: xyz.jfshare.demos.send.email.entity
   mapper-locations: classpath:mapper/*.xml

@@ -1,4 +1,4 @@
-package xyz.jfshare.demos.send.email.commons.config;
+package xyz.jfshare.demos.send.email.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
@@ -13,7 +13,7 @@ import springfox.documentation.swagger2.annotations.EnableSwagger2;
 @Configuration
 @EnableSwagger2
 //@EnableWebMvc
-@ComponentScan(basePackages = {"xyz.jfshare.demos.send.email.commons.controller"})
+@ComponentScan(basePackages = {"xyz.jfshare.demos.send.email.controller"})
 public class SwaggerConfig {
 
     @Bean
@@ -24,10 +24,10 @@ public class SwaggerConfig {
     private ApiInfo apiInfo(){
         Contact contact = new Contact("Jin","http://www.jfshare.xyz","929760196@qq.com");
         return new ApiInfoBuilder()
-                .title("111")
-                .description("222")
+                .title("邮件发送系统")
+                .description("实现用户之间发送邮件功能")
                 .contact(contact)
-                .version("1.0.0")
+                .version("1.0.0-SNAPSHOT")
                 .build();
     }
 }

@@ -20,6 +20,7 @@
         <java.version>1.8</java.version>
 
         <!-- 统一的依赖管理 -->
+        <theproject.version>1.0.0-SNAPSHOT</theproject.version>
         <commons-lang3.version>3.5</commons-lang3.version>
         <servlet-api.version>3.1.0</servlet-api.version>
         <spring-boot.version>2.1.4.RELEASE</spring-boot.version>
@@ -30,6 +31,7 @@
         <mybatis-generator.version>1.3.5</mybatis-generator.version>
         <swagger.version>2.9.2</swagger.version>
         <jackson.version>2.9.8</jackson.version>
+        <devtools.version>3.8.1</devtools.version>
     </properties>
 
     <dependencyManagement>
@@ -44,6 +46,12 @@
             <dependency>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-starter-test</artifactId>
+                <version>${spring-boot.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-starter-mail</artifactId>
                 <version>${spring-boot.version}</version>
             </dependency>
             <!-- Spring Boot End -->
@@ -111,6 +119,51 @@
                 <version>${jackson.version}</version>
             </dependency>
             <!-- Swagger End -->
+
+            <!--  Project Begin  -->
+            <dependency>
+                <groupId>xyz.jfshare.demos</groupId>
+                <artifactId>send-email-service</artifactId>
+                <version>${theproject.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>xyz.jfshare.demos</groupId>
+                <artifactId>send-email-dao</artifactId>
+                <version>${theproject.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>xyz.jfshare.demos</groupId>
+                <artifactId>send-email-commons</artifactId>
+                <version>${theproject.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>xyz.jfshare.demos</groupId>
+                <artifactId>send-email-web</artifactId>
+                <version>${theproject.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>xyz.jfshare.demos</groupId>
+                <artifactId>send-email-domain</artifactId>
+                <version>${theproject.version}</version>
+            </dependency>
+            <!--  Project End  -->
+
+            <dependency>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>${devtools.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-devtools</artifactId>
+                <optional>true</optional>
+            </dependency>
+
         </dependencies>
     </dependencyManagement>
 
