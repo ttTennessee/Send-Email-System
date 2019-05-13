@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="send-email-service" />
+        <module name="send-email-dao" />
+        <module name="send-email-domain" />
+        <module name="send-email-web" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="send-email-dao" target="1.8" />
+      <module name="send-email-dependencies" target="1.8" />
+      <module name="send-email-domain" target="1.8" />
+      <module name="send-email-service" target="1.8" />
+      <module name="Send-Email-System" target="1.8" />
+      <module name="send-email-web" target="1.8" />
+      <module name="send-email-web-user" target="1.8" />
+    </bytecodeTargetLevel>
+  </component>
+  <component name="JavacSettings">
+    <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="send-email-dao" options="-parameters" />
+      <module name="send-email-dependencies" options="" />
+      <module name="send-email-domain" options="-parameters" />
+      <module name="send-email-service" options="-parameters" />
+      <module name="send-email-web" options="-parameters" />
+      <module name="send-email-web-user" options="-parameters" />
+    </option>
+  </component>
+</project>
