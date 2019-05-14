@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+import xyz.jfshare.demos.send.email.commons.constant.ResponseCode;
 import xyz.jfshare.demos.send.email.entity.UserTable;
 import xyz.jfshare.demos.send.email.service.UserService;
 
@@ -38,7 +39,7 @@ public class UserController {
             session.setAttribute("user",userTable);
             return map;
         }
-        return "{\"error\":\"邮箱或密码错误\"}";
+        return ResponseCode.LOGIN_INPUT_ERROR;
     /*    //1.获取Subject
         Subject subject = SecurityUtils.getSubject();
         UsernamePasswordToken token = new UsernamePasswordToken(email,password);
@@ -58,21 +59,21 @@ public class UserController {
     public Object register(String email,String password,int code,String name){
         int result = userService.register(email,password,code,name,user);
         if (result == -1){
-            return "{\"error\":\"验证码错误\"}";
+            return ResponseCode.REGISTER_ERROR_CODE;
         }else if (result == 1){
-            return "{\"ok\":\"注册成功\"}";
+            return  ResponseCode.REGISTER_SUCCESS;
         }else if (result == -2){
-            return "{\"error\":\"该邮箱已经注册，请换其他邮箱\"}";
+            return  ResponseCode.REGISTER_EMAIL_EXISTS;
         }else if (result == -3){
-            return "{\"error\":\""+email+"该邮箱和发送验证码邮箱"+user.getEmail()+"不一致\"}";
+            return  ResponseCode.REGISTER_EMAIL_DIFFER;
         }
-        return "{\"error\":\"网络超时，请稍后再试\"}";
+        return  ResponseCode.REGISTER_DATABASE_ERROR;
     }
 
     @PostMapping("/sendCode")
     public String sendCode(String email){
         if (userService.getByEmail(email)!=null){
-            return "{\"error\":\"该邮箱已经注册，请换其他邮箱\"}";
+            return  ResponseCode.REGISTER_EMAIL_EXISTS;
         }
         int code = (new Random()).nextInt(899999) + 100000;
         user.setCode(code);
@@ -80,21 +81,21 @@ public class UserController {
         String subject = "验证码";
         String content = "您的验证码为: " + code + ",请在30分钟内完成注册!";
         userService.sendCode(email,subject,content);
-        return "{\"ok\":\"发送成功\"}";
+        return  ResponseCode.REGISTER_SEND_SUCCESS;
     }
 
     @GetMapping("/success")
     public String success(){
-        return "{\"ok\":\"个人主页\"}";
+        return ResponseCode.HOME_SUCCESS;
     }
 
     @GetMapping("/notLogin")
     public String notLogin() {
-        return "{\"error\":\"用户未登录\"}";
+        return ResponseCode.HOME_NOT_LOGIN;
     }
 
     @GetMapping("/alreadyLogin")
     public String alreadyLogin() {
-        return "{\"error\":\"用户已经登录不能重复登录\"}";
+        return ResponseCode.LOGIN_REPEAT_LOGIN;
     }
 }
