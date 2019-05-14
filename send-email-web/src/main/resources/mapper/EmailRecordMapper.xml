@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="xyz.jfshare.demos.send.email.mapper.EmailRecordMapper">
+  <resultMap id="BaseResultMap" type="xyz.jfshare.demos.send.email.entity.EmailRecord">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <id column="RECORD_ID" jdbcType="INTEGER" property="recordId" />
+    <result column="TITLE" jdbcType="VARCHAR" property="title" />
+    <result column="SENDER" jdbcType="VARCHAR" property="sender" />
+    <result column="RECEIVER" jdbcType="VARCHAR" property="receiver" />
+    <result column="CONTENT" jdbcType="VARCHAR" property="content" />
+    <result column="SEND_TIME" jdbcType="TIMESTAMP" property="sendTime" />
+    <result column="CREATE_TIME" jdbcType="TIMESTAMP" property="createTime" />
+    <result column="UPDATE_TIME" jdbcType="TIMESTAMP" property="updateTime" />
+  </resultMap>
+</mapper>
