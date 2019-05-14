@@ -7,7 +7,7 @@ import tk.mybatis.spring.annotation.MapperScan;
 
 @SpringBootApplication
 @MapperScan(basePackages = {"xyz.jfshare.demos.send.email.mapper"})
-@ComponentScan(basePackages = {"xyz.jfshare.demos.send.email.service","xyz.jfshare.demos.send.email.config"})
+@ComponentScan(basePackages = {"xyz.jfshare.demos.send.email.service","xyz.jfshare.demos.send.email.config","xyz.jfshare.demos.send.email.interceptor"})
 public class SendWebApplication {
     public static void main(String[] args){
         SpringApplication.run(SendWebApplication.class,args);

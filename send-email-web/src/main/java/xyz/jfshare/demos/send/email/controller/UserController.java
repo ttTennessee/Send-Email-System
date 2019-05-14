@@ -8,15 +8,19 @@ import org.apache.shiro.subject.Subject;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import xyz.jfshare.demos.send.email.entity.UserTable;
 import xyz.jfshare.demos.send.email.service.UserService;
 
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Random;
 
-@RestController(value = "/user")
+@RestController
+@RequestMapping(value = "/user")
 public class UserController {
 
     @Autowired
@@ -25,15 +29,17 @@ public class UserController {
     private UserTable user = new UserTable();
 
     @PostMapping("/login")
-    public Object login(String email,String password){
-//        UserTable userTable = userService.login(email, password);
-//        if (userTable!=null){
-//            Map<String,UserTable> map = new HashMap<>();
-//            map.put("user",userTable);
-//            return map;
-//        }
-//        return "{\"error\":\"邮箱或密码错误\"}";
-        //1.获取Subject
+    public Object login(String email, String password, HttpServletRequest request){
+        UserTable userTable = userService.login(email, password);
+        if (userTable!=null){
+            Map<String,UserTable> map = new HashMap<>();
+            map.put("user",userTable);
+            HttpSession session = request.getSession();
+            session.setAttribute("user",userTable);
+            return map;
+        }
+        return "{\"error\":\"邮箱或密码错误\"}";
+    /*    //1.获取Subject
         Subject subject = SecurityUtils.getSubject();
         UsernamePasswordToken token = new UsernamePasswordToken(email,password);
         //
@@ -45,7 +51,7 @@ public class UserController {
             return "{\"error\":\"邮箱输入错误\"}";
         }catch (IncorrectCredentialsException e){
             return "{\"error\":\"密码输入错误\"}";
-        }
+        }*/
     }
 
     @PostMapping("/register")
@@ -77,8 +83,18 @@ public class UserController {
         return "{\"ok\":\"发送成功\"}";
     }
 
-    @GetMapping("success")
+    @GetMapping("/success")
     public String success(){
         return "{\"ok\":\"个人主页\"}";
+    }
+
+    @GetMapping("/notLogin")
+    public String notLogin() {
+        return "{\"error\":\"用户未登录\"}";
+    }
+
+    @GetMapping("/alreadyLogin")
+    public String alreadyLogin() {
+        return "{\"error\":\"用户已经登录不能重复登录\"}";
     }
 }
