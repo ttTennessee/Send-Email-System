@@ -32,6 +32,7 @@
         <swagger.version>2.9.2</swagger.version>
         <jackson.version>2.9.8</jackson.version>
         <devtools.version>3.8.1</devtools.version>
+        <shiro.version>1.4.1</shiro.version>
     </properties>
 
     <dependencyManagement>
@@ -147,7 +148,7 @@
 
             <dependency>
                 <groupId>xyz.jfshare.demos</groupId>
-                <artifactId>send-email-domain</artifactId>
+                <artifactId>send-email-model</artifactId>
                 <version>${theproject.version}</version>
             </dependency>
             <!--  Project End  -->
@@ -161,8 +162,17 @@
             <dependency>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-devtools</artifactId>
+                <version>${spring-boot.version}</version>
                 <optional>true</optional>
             </dependency>
+
+            <!--  Shiro Begin  -->
+            <dependency>
+                <groupId>org.apache.shiro</groupId>
+                <artifactId>shiro-spring</artifactId>
+                <version>${shiro.version}</version>
+            </dependency>
+            <!--  Shiro End  -->
 
         </dependencies>
     </dependencyManagement>

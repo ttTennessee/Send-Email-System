@@ -64,7 +64,12 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public int register(String email, String password, int code, String name,UserTable userTable) {
+        if (!email.equals(userTable.getEmail())){
+            logger.warn(String.format("邮箱%s和发送验证码的邮箱%s不一致",email,userTable.getEmail()));
+            return -3;
+        }
         if (getByEmail(email)!=null){
+            logger.warn(String.format("%s邮箱已经注册过",email));
             return -2;
         }
         if (code==userTable.getCode()){

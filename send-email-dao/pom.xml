@@ -26,7 +26,7 @@
 
         <dependency>
             <groupId>xyz.jfshare.demos</groupId>
-            <artifactId>send-email-domain</artifactId>
+            <artifactId>send-email-model</artifactId>
         </dependency>
     </dependencies>
 

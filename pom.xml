@@ -18,7 +18,7 @@
 
     <modules>
         <module>send-email-dependencies</module>
-        <module>send-email-domain</module>
+        <module>send-email-model</module>
         <module>send-email-web</module>
         <module>send-email-dao</module>
         <module>send-email-service</module>

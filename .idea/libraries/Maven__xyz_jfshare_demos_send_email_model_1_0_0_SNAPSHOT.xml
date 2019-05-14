@@ -1,0 +1,15 @@
+<component name="libraryTable">
+  <library name="Maven: xyz.jfshare.demos:send-email-model:1.0.0-SNAPSHOT">
+    <CLASSES>
+      <root url="jar://$MAVEN_REPOSITORY$/xyz/jfshare/demos/send-email-model/1.0.0-SNAPSHOT/send-email-model-1.0.0-SNAPSHOT.jar!/" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://$PROJECT_DIR$/send-email-model/send-email-model-1.0.0-SNAPSHOT-javadoc.jar!/" />
+      <root url="jar://$MAVEN_REPOSITORY$/xyz/jfshare/demos/send-email-model/1.0.0-SNAPSHOT/send-email-model-1.0.0-SNAPSHOT-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://$PROJECT_DIR$/send-email-model/send-email-model-1.0.0-SNAPSHOT-sources.jar!/" />
+      <root url="jar://$MAVEN_REPOSITORY$/xyz/jfshare/demos/send-email-model/1.0.0-SNAPSHOT/send-email-model-1.0.0-SNAPSHOT-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>
